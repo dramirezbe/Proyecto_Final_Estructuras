@@ -1,0 +1,22 @@
+{
+  "name": "web-page",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\"",
+    "start": "npm run build --workspace=frontend && NODE_ENV=production npm run start --workspace=backend"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "nodaemon": "^0.0.5"
+  },
+  "keywords": [],
+  "author": "dramirezbe, mrswampert",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": "web-page para el manejo de la domótica de una habitación, tiene como funcionalidad el controlar el nivel de lumen de una bombilla y ver la temperatura y humedad del cuarto"
+}
